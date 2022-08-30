@@ -1,6 +1,20 @@
 const root = document.getElementById("root");
 const listInput = document.getElementById("listInput");
 const addToList = document.getElementById("addToList");
+const addDiv = document.querySelector(".add-div");
+const btnAdd = document.querySelector(".add-btn");
+btnAdd.onclick = () => {
+  if (
+    addDiv.classList.contains("cl-add-div") &&
+    btnAdd.classList.contains("cl-btn")
+  ) {
+    addDiv.classList.remove("cl-add-div");
+    btnAdd.classList.remove("cl-btn");
+  } else {
+    addDiv.classList.add("cl-add-div");
+    btnAdd.classList.add("cl-btn");
+  }
+};
 let tasks = [];
 if (localStorage.getItem("tasks")) {
   tasks = JSON.parse(localStorage.getItem("tasks"));
